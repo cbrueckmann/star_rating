@@ -1,0 +1,11 @@
+%li#user-rating.input.custom-radiobutton-group<
+  %label<
+    = t('mood.header_rate')
+  %span.label-hint<
+    = "(#{t('base.optional')})"
+  #rate-bar<
+    %span.star-rating.select<
+      - Feedback::MOOD_TYPES.each do |key, value|
+        %input{type: 'radio', name: "#{klass}[mood_type]", value: Feedback::MOOD_TYPES.keys.index(key), id: "#{klass}_mood_type_#{key}"}
+        %label{for: "#{klass}_mood_type_#{key}"}<
+          %span.ss-star>
