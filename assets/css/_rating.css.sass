@@ -1,4 +1,15 @@
-#user-rating
+// depends on SASS variables for colors
+// this example requires the symbol-icon set ss-standard (font)
+// https://symbolset.com/icons/standard
+
+// global css for radio-groups displayed as grafics
+.custom-radiobutton-group
+  label
+    cursor: pointer
+  input[type=radio]
+    display: none
+
+#star-rating
   margin: 10px 0 0 0
   position: relative
   
@@ -9,6 +20,7 @@
     display: inline-block
     padding: 4px 6px 1px 3px
     background-color: $white
+
 .star-rating
   .ss-star
     margin-right: 5px

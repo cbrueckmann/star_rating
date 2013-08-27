@@ -1,11 +1,14 @@
-%li#user-rating.input.custom-radiobutton-group<
+%li#star-rating.input.custom-radiobutton-group<
   %label<
-    = t('mood.header_rate')
+    Rating
+    -#= t('mood.header_rate')
   %span.label-hint<
-    = "(#{t('base.optional')})"
+    (optional)
+    -#= "(#{t('base.optional')})"
   #rate-bar<
     %span.star-rating.select<
-      - Feedback::MOOD_TYPES.each do |key, value|
-        %input{type: 'radio', name: "#{klass}[mood_type]", value: Feedback::MOOD_TYPES.keys.index(key), id: "#{klass}_mood_type_#{key}"}
-        %label{for: "#{klass}_mood_type_#{key}"}<
+      -# Feedback::MOOD_TYPES.each do |key, value|
+      - {:happy => 'Happy',:confused => 'Confused',  :sad => 'Unhappy', :angry => 'Angry' }.each do |key, value|
+        %input{type: 'radio', name: "feedback[mood_type]", value: Feedback::MOOD_TYPES.keys.index(key), id: "feedback_mood_type_#{key}"}
+        %label{for: "feedback_mood_type_#{key}"}<
           %span.ss-star>
